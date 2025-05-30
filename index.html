@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnifique Appartement 5 Pièces à Bordeaux, Saint Genès | 102m² | 279 500€</title>
+    <meta name="description" content="Appartement d'exception 102m² à Bordeaux. 5 pièces, cheminée, 4 balcons, cour privative, garage. Quartier recherché. Visite immédiate possible. Prix: 279,500€">
+<meta name="keywords" content="appartement Bordeaux, vente immobilier Bordeaux, 5 pièces Bordeaux, appartement 102m2, immobilier investissement Bordeaux">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .nav-menu.scrolled {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu.scrolled .nav-logo {
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-menu.scrolled .nav-links li a {
+            color: #2c3e50;
+        }
+
+        .nav-links li a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-menu.scrolled .nav-links li a:hover {
+            background: rgba(102,126,234,0.1);
+            color: #667eea;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-menu.scrolled .nav-toggle span {
+            background: #2c3e50;
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(255,255,255,0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                transform: translateX(0);
+            }
+
+            .nav-links li a {
+                color: #2c3e50 !important;
+                padding: 1rem;
+                border-radius: 10px;
+                display: block;
+                text-align: center;
+                font-size: 1.1rem;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Adjust body padding for fixed navigation */
+        body {
+            padding-top: 80px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Carousel Section */
+        .hero-carousel {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+            z-index: 1;
+        }
+
+        .carousel-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+            z-index: 1;
+        }
+
+        /* Image placeholder styles - replace with your actual images */
+        .slide-1 {
+            background-image: url('images/11.jpg');
+        }
+
+        .slide-2 {
+            background-image: url('images/2.jpg');
+        }
+
+        .slide-3 {
+            background-image: url('images/3.jpg');
+        }
+
+        .slide-4 {
+            background-image: url('images/4.jpg');
+        }
+
+        .slide-5 {
+            background-image: url('images/5.jpg');
+        }
+
+        .slide-6 {
+                background-image: url('images/6.jpg');
+        }
+
+        /* Hero Content Overlay */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 2rem;
+            pointer-events: all;
+            margin-top: -120px;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .price-tag {
+            font-size: 3rem;
+            font-weight: 800;
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem 3rem;
+            border-radius: 60px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.3);
+            display: inline-block;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 1.5rem 4rem;
+            border: none;
+            border-radius: 60px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 15px 35px rgba(255,107,107,0.4);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(255,107,107,0.5);
+        }
+
+        /* Carousel Navigation */
+        .carousel-nav {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 15;
+        }
+
+        .nav-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.6);
+        }
+
+        .nav-dot.active {
+            background: white;
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(255,255,255,0.8);
+        }
+
+        .carousel-arrows {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 15;
+            background: rgba(255,255,255,0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .carousel-arrows:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .arrow-left {
+            left: 2rem;
+        }
+
+        .arrow-right {
+            right: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, #ffffff 0%, #b58edd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(102,126,234,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102,126,234,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-description {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .photo-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 4/3;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .photo-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0);
+            transition: background 0.3s ease;
+            z-index: 1;
+        }
+
+        .photo-item:hover::before {
+            background: rgba(0,0,0,0.3);
+        }
+
+        .photo-item::after {
+            content: '🔍';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+
+        .photo-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            animation: zoomIn 0.3s ease-out;
+        }
+
+        .lightbox-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(255,255,255,0.1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.1);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            background: rgba(255,255,255,0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-prev {
+            left: -80px;
+        }
+
+        .lightbox-next {
+            right: -80px;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.2rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Individual photo backgrounds */
+        .photo-1 { background-image: url('images/1.jpg'); }
+        .photo-2 { background-image: url('images/2.jpg'); }
+        .photo-3 { background-image: url('images/3.jpg'); }
+        .photo-4 { background-image: url('images/4.jpg'); }
+        .photo-5 { background-image: url('images/5.jpg'); }
+        .photo-6 { background-image: url('images/6.jpg'); }
+        .photo-7 { background-image: url('images/7.jpg'); }
+        .photo-8 { background-image: url('images/8.jpg'); }
+        .photo-9 { background-image: url('images/9.jpg'); }
+        .photo-10 { background-image: url('images/10.jpg'); }
+        .photo-11 { background-image: url('images/11.jpg'); }
+
+        /* Description Section */
+        .description-section {
+            background: white;
+        }
+
+        .description-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #555;
+        }
+
+        .description-content p {
+            margin-bottom: 2rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* Location Section */
+        .location-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .location-content {
+            text-align: center;
+        }
+
+        .location-content p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.08);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.12);
+        }
+
+        .contact-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .contact-detail {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            opacity: 0.9;
+        }
+
+        /* Statistics Section */
+        .statistics-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            gap: 1rem;
+        }
+
+        .toggle-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .toggle-btn.active {
+            background: rgba(255,255,255,0.9);
+            color: #667eea;
+            border-color: white;
+            transform: scale(1.05);
+        }
+
+        .toggle-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .stats-content {
+            display: none;
+        }
+
+        .stats-content.active {
+            display: block;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.15);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-description {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.4;
+        }
+
+        .stats-intro {
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .stats-intro h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .stats-intro p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .stats-toggle {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .toggle-btn {
+                width: 80%;
+                text-align: center;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .stat-card {
+                padding: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        .neighborhood-section {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .neighborhood-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .neighborhood-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .neighborhood-intro h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .neighborhood-intro p {
+            font-size: 1.2rem;
+            color: #34495e;
+            line-height: 1.8;
+        }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .history-card {
+            background: rgba(255,255,255,0.9);
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .history-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        .history-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .history-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #34495e;
+            margin-bottom: 1.5rem;
+        }
+
+        .history-card .highlight-text {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .neighborhood-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-point {
+            background: rgba(255,255,255,0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .feature-point:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.95);
+        }
+
+        .feature-point .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-point h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-point p {
+            font-size: 0.95rem;
+            color: #34495e;
+            line-height: 1.6;
+        }
+
+        /* Floating background elements for neighborhood section */
+        .neighborhood-section::before,
+        .neighborhood-section::after {
+            content: '';
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: floatSlow 12s ease-in-out infinite;
+        }
+
+        .neighborhood-section::before {
+            width: 300px;
+            height: 300px;
+            top: 20%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        .neighborhood-section::after {
+            width: 200px;
+            height: 200px;
+            bottom: 20%;
+            right: -5%;
+            animation-delay: 6s;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-20px) rotate(5deg); opacity: 0.6; }
+        }
+
+        /* Footer / Copyright Section */
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+            opacity: 0.8;
+        }
+
+        .footer .copyright {
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer a {
+            color: #74b9ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #0984e3;
+        }
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .price-tag {
+                font-size: 2rem;
+                padding: 1rem 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .carousel-arrows {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .arrow-left {
+                left: 1rem;
+            }
+
+            .arrow-right {
+                right: 1rem;
+            }
+
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+
+            .lightbox-nav {
+                font-size: 2rem;
+                width: 45px;
+                height: 45px;
+            }
+
+            .lightbox-prev {
+                left: -60px;
+            }
+
+            .lightbox-next {
+                right: -60px;
+            }
+
+            .lightbox-content {
+                max-width: 95%;
+                max-height: 80%;
+            }
+
+            .lightbox-close {
+                top: -40px;
+                font-size: 1.5rem;
+                width: 35px;
+                height: 35px;
+            }
+
+            .lightbox-counter {
+                bottom: -40px;
+                font-size: 1rem;
+            }
+
+            .history-card {
+                padding: 2rem;
+            }
+            
+            .history-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .neighborhood-features {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .stats-toggle {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .toggle-btn {
+                width: 80%;
+                text-align: center;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .stat-card {
+                padding: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .price-tag {
+                font-size: 2rem;
+                padding: 1rem 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .carousel-arrows {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .arrow-left {
+                left: 1rem;
+            }
+
+            .arrow-right {
+                right: 1rem;
+            }
+
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+
+            .lightbox-nav {
+                font-size: 2rem;
+                width: 45px;
+                height: 45px;
+            }
+
+            .lightbox-prev {
+                left: -60px;
+            }
+
+            .lightbox-next {
+                right: -60px;
+            }
+
+            .lightbox-content {
+                max-width: 95%;
+                max-height: 80%;
+            }
+
+            .lightbox-close {
+                top: -40px;
+                font-size: 1.5rem;
+                width: 35px;
+                height: 35px;
+            }
+
+            .lightbox-counter {
+                bottom: -40px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Floating Animation */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .floating-elements::before,
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .floating-elements::before {
+            width: 400px;
+            height: 400px;
+            top: 10%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        .floating-elements::after {
+            width: 300px;
+            height: 300px;
+            bottom: 10%;
+            right: -5%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
+            50% { transform: translateY(-30px) rotate(10deg); opacity: 0.8; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Apartment",
+        "name": "Appartement 102m² Bordeaux, Saint Genès",
+        "description": "Appartement d'exception 102m² à Bordeaux, Saint Genès. 5 pièces, cheminée, 4 balcons, cour privative, garage. Quartier recherché. Visite immédiate possible.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bordeaux, Saint Genès",
+          "addressCountry": "FR"
+        }
+      },
+      "price": "279500",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-menu scrolled" id="navbar">
+      <div class="nav-container">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#gallery">Galerie</a></li>
+          <li><a href="#description">Description</a></li>
+          <li><a href="#statistics">Statistiques</a></li>
+          <li><a href="#neighborhood">Quartier</a></li>
+          <li><a href="#location">Localisation</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Carousel Section -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <!-- Slide 1 -->
+            <div class="carousel-slide slide-1 active"></div>
+            
+            <!-- Slide 2 -->
+            <div class="carousel-slide slide-2"></div>
+            
+            <!-- Slide 3 -->
+            <div class="carousel-slide slide-3"></div>
+            
+            <!-- Slide 4 -->
+            <div class="carousel-slide slide-4"></div>
+            
+            <!-- Slide 5 -->
+            <div class="carousel-slide slide-5"></div>
+            
+            <!-- Slide 6 -->
+            <div class="carousel-slide slide-6"></div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="floating-elements"></div>
+
+        <!-- Hero Content Overlay -->
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">Appartement Exceptionnel 5 Pièces</h1>
+                <div style="margin-top: 120px;">
+                    <a href="#contact" class="cta-button">Planifier une Visite</a>
+                </div>
+                <p class="hero-subtitle">Emplacement de Prestige à Bordeaux, Saint Genès • 102m² de Vie Moderne</p>
+            </div>
+        </div>
+
+        <!-- Carousel Navigation -->
+        <div class="carousel-nav">
+            <div class="nav-dot active" data-slide="0"></div>
+            <div class="nav-dot" data-slide="1"></div>
+            <div class="nav-dot" data-slide="2"></div>
+            <div class="nav-dot" data-slide="3"></div>
+            <div class="nav-dot" data-slide="4"></div>
+            <div class="nav-dot" data-slide="5"></div>
+        </div>
+
+        <!-- Carousel Arrows -->
+        <div class="carousel-arrows arrow-left">‹</div>
+        <div class="carousel-arrows arrow-right">›</div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Pourquoi Vous Allez Adorer Cet Appartement</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3 class="feature-title">102m² d'Espace</h3>
+                    <p class="feature-description">Généreux espace de vie avec 5 pièces magnifiquement aménagées, parfait pour les familles ou les professionnels recherchant confort et style. Grand salon avec cheminée utilisable, 2 salles de bain, 1 grand balcon et 3 petits balcons. Agrémenté d'une cour privative, box garage, garage à vélos et grande cave privative pour un confort de vie exceptionnel.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3 class="feature-title">Emplacement de Prestige</h3>
+                    <p class="feature-description">Situé dans un quartier recherché à Bordeaux, Saint Genès avec excellentes liaisons de transport(Tramway B Université/Centre ville, Bus, Boulevards), commodités locales(Pharmacies, Supermarchés, Boulangeries, Restaurants, Cafés, etc.)</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3 class="feature-title">Flexibilité & Modularité</h3>
+                    <p class="feature-description">Espace modulable offrant une flexibilité totale avec une cuisine à rafraîchir ou a déplacé selon vos goûts. Idéal pour investisseurs : possibilité de diviser en deux appartements distincts ou de conserver un seul logement spacieux pour maximiser vos options.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">Valeur Exceptionnelle</h3>
+                    <p class="feature-description">Prix compétitif pour le marché bordelais avec fort potentiel d'investissement dans ce quartier en pleine croissance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Galerie Photos Complète</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: #666;">Cliquez sur une photo pour l'agrandir et naviguer dans la galerie</p>
+            
+            <div class="photo-gallery">
+                <div class="photo-item photo-1" data-index="0"></div>
+                <div class="photo-item photo-2" data-index="1"></div>
+                <div class="photo-item photo-3" data-index="2"></div>
+                <div class="photo-item photo-4" data-index="3"></div>
+                <div class="photo-item photo-5" data-index="4"></div>
+                <div class="photo-item photo-6" data-index="5"></div>
+                <div class="photo-item photo-7" data-index="6"></div>
+                <div class="photo-item photo-8" data-index="7"></div>
+                <div class="photo-item photo-9" data-index="8"></div>
+                <div class="photo-item photo-10" data-index="9"></div>
+                <div class="photo-item photo-11" data-index="10"></div>
+            </div>
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <div class="lightbox-close" id="lightbox-close">×</div>
+                <img class="lightbox-image" id="lightbox-image" src="" alt="Appartement Photo">
+                <div class="lightbox-nav lightbox-prev" id="lightbox-prev">‹</div>
+                <div class="lightbox-nav lightbox-next" id="lightbox-next">›</div>
+                <div class="lightbox-counter" id="lightbox-counter">1 / 11</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description Section -->
+    <section class="section description-section" id="description">
+        <div class="container">
+            <h2 class="section-title">Votre Appartement de Rêve Vous Attend</h2>
+            <div class="description-content">
+                <p>Découvrez ce <span class="highlight">magnifique appartement 5 pièces</span> de 102m² au cœur de Bordeaux, Saint Genès. Cette propriété exceptionnelle offre le parfait équilibre entre confort moderne et charme français classique, conçue pour ceux qui apprécient un art de vivre de qualité.</p>
+                
+                <p>L'appartement dispose de <span class="highlight">pièces spacieuses et lumineuses</span> avec un magnifique parquet dans tout l'appartement. L'agencement ouvert bien pensé crée une circulation fluide entre les espaces de vie, parfait pour la vie quotidienne et pour recevoir ses invités avec style.</p>
+                
+                <p>Situé dans un <span class="highlight">quartier de prestige de Bordeaux, Saint Genès</span>, vous profiterez d'un accès facile aux commodités locales, restaurants de renommée mondiale, boutiques de charme et d'excellents transports en commun. Le quartier équilibre parfaitement la commodité urbaine avec une atmosphère résidentielle paisible.</p>
+                
+                <p>Cette propriété représente une <span class="highlight">excellente opportunité d'investissement</span> dans l'une des villes les plus désirables de France, réputée pour sa riche culture, son patrimoine viticole mondialement célèbre, sa scène artistique dynamique et son économie en croissance continue.</p>
+                
+                <p>L'appartement est <span class="highlight">prêt à emménager</span> et a été méticuleusement entretenu par des propriétaires attentionnés, vous permettant de profiter immédiatement de votre nouveau foyer sans aucun souci ni frais supplémentaires.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section statistics-section" id="statistics">
+        <div class="container">
+            <div class="stats-intro">
+                <h2 class="section-title" style="color: white;">Pourquoi Choisir Cet Appartement ?</h2>
+                <p>Découvrez les chiffres qui font de cette propriété un choix intelligent pour votre projet</p>
+            </div>
+
+            <!-- Toggle Buttons -->
+            <div class="stats-toggle">
+                <button class="toggle-btn active" onclick="showStats('family')">👨‍👩‍👧‍👦 Vie de Famille</button>
+                <button class="toggle-btn" onclick="showStats('investment')">💰 Investissement</button>
+            </div>
+
+            <!-- Family Statistics -->
+            <div class="stats-content active" id="family-stats">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Écoles & Crèches</div>
+                        <div class="stat-description">Dans un rayon de 2km, tous niveaux confondus</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Espaces Verts</div>
+                        <div class="stat-description">Parcs, jardins et aires de jeux à proximité</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">9.2/10</div>
+                        <div class="stat-label">Indice Sécurité</div>
+                        <div class="stat-description">Quartier résidentiel très sécurisé</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Lignes Transport</div>
+                        <div class="stat-description">Tramway B + lignes de bus régulières</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Commerces</div>
+                        <div class="stat-description">Pharmacies, supermarchés, boulangeries</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">12 min</div>
+                        <div class="stat-label">Centre-Ville</div>
+                        <div class="stat-description">Accès rapide au cœur historique</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15 min</div>
+                        <div class="stat-label">Université Talence</div>
+                        <div class="stat-description">Accès rapide aux Université bordelaise</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investment Statistics -->
+            <div class="stats-content" id="investment-stats">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">4.2%</div>
+                        <div class="stat-label">Rendement Locatif</div>
+                        <div class="stat-description">Estimation annuelle brute moyenne</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">+12%</div>
+                        <div class="stat-label">Évolution Prix</div>
+                        <div class="stat-description">Croissance sur 3 ans dans le secteur</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">96%</div>
+                        <div class="stat-label">Taux Occupation</div>
+                        <div class="stat-description">Demande locative très forte</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15 jours</div>
+                        <div class="stat-label">Délai Location</div>
+                        <div class="stat-description">Temps moyen pour trouver locataire</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">XXXX €</div>
+                        <div class="stat-label">Loyer Estimé</div>
+                        <div class="stat-description">Potentiel locatif mensuel</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">A+</div>
+                        <div class="stat-label">Zone Prisée</div>
+                        <div class="stat-description">Secteur recherché par locataires</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neighborhood History Section -->
+    <section class="section neighborhood-section" id="neighborhood">
+        <div class="container">
+            <div class="neighborhood-content">
+                <div class="neighborhood-intro">
+                    <h2 class="section-title" style="color: #2c3e50;">Histoire du Quartier</h2>
+                    <p>Découvrez le riche patrimoine et l'évolution fascinante de ce quartier emblématique de Bordeaux, Saint Genès</p>
+                </div>
+
+                <div class="history-grid">
+                    <div class="history-card">
+                        <h3>🏛️ Des Origines Médiévales à l'Époque Moderne</h3>
+                        <p>Au Moyen Âge, ce secteur de Bordeaux, Saint Genès n'était qu'une zone marécageuse située aux portes de la ville. Avec le développement urbain du 19ème siècle et la mise en place des grands boulevards, <span class="highlight-text">le quartier se transforme en banlieue résidentielle prisée</span> de la bourgeoisie bordelaise.</p>
+                        
+                        <p>L'architecture du quartier témoigne de cette évolution : les façades néoclassiques côtoient harmonieusement des créations Art déco et Art nouveau. Cette diversité architecturale reflète <span class="highlight-text">un engouement constant jusqu'au début du 20ème siècle</span>, faisant aujourd'hui la richesse patrimoniale du secteur.</p>
+                    </div>
+
+                    <div class="history-card">
+                        <h3>🏗️ Patrimoine Architectural Remarquable</h3>
+                        <p>Le quartier abrite de nombreux <span class="highlight-text">édifices historiques et architecturaux</span> qui racontent l'histoire de Bordeaux, Saint Genès. Des églises aux hôtels particuliers, en passant par les anciens bâtiments hospitaliers et les maisons bourgeoises, chaque rue dévoile un pan de l'histoire locale.</p>
+                        
+                        <p>Les espaces verts aménagés dans d'anciennes propriétés privées offrent aujourd'hui aux résidents des <span class="highlight-text">havres de paix paysagés à l'anglaise</span>, véritables poumons verts au cœur de l'urbain.</p>
+                    </div>
+
+                    <div class="history-card">
+                        <h3>🌟 Vivre dans ce Quartier Aujourd'hui</h3>
+                        <p>Réputé <span class="highlight-text">tranquille et parfaitement desservi</span> par les transports en commun, le quartier séduit par la beauté et la diversité de ses architectures. Les familles apprécient la présence d'établissements scolaires de qualité et d'espaces verts équipés.</p>
+                        
+                        <p>Le tramway permet de rejoindre facilement le centre-ville historique ainsi que les campus universitaires.</span></p>
+                    </div>
+                </div>
+
+                <div class="neighborhood-features">
+                    <div class="feature-point">
+                        <div class="icon">🚊</div>
+                        <h4>Transport Optimal</h4>
+                        <p>Ligne de tramway B, bus, proximité rocade et autoroutes</p>
+                    </div>
+                    <div class="feature-point">
+                        <div class="icon">🏫</div>
+                        <h4>Écoles de Qualité</h4>
+                        <p>Maternelles, primaires, collèges et lycées réputés</p>
+                    </div>
+                    <div class="feature-point">
+                        <div class="icon">🌳</div>
+                        <h4>Espaces Verts</h4>
+                        <p>Jardins paysagers, squares et parcs de proximité</p>
+                    </div>
+                    <div class="feature-point">
+                        <div class="icon">🛍️</div>
+                        <h4>Commerce Local</h4>
+                        <p>Boutiques, restaurants et services de proximité</p>
+                    </div>
+                    <div class="feature-point">
+                        <div class="icon">🏛️</div>
+                        <h4>Patrimoine Riche</h4>
+                        <p>Architecture historique et monuments classés</p>
+                    </div>
+                    <div class="feature-point">
+                        <div class="icon">👨‍👩‍👧‍👦</div>
+                        <h4>Vie de Quartier</h4>
+                        <p>Ambiance familiale et communauté dynamique</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section description-section">
+        <div class="container">
+            <h2 class="section-title">Votre Appartement de Rêve Vous Attend</h2>
+            <div class="description-content">
+                <p>Découvrez ce <span class="highlight">magnifique appartement 5 pièces</span> de 102m² au cœur de Bordeaux, Saint Genès. Cette propriété exceptionnelle offre le parfait équilibre entre confort moderne et charme français classique, conçue pour ceux qui apprécient un art de vivre de qualité.</p>
+                
+                <p>L'appartement dispose de <span class="highlight">pièces spacieuses et lumineuses</span> avec un magnifique parquet dans tout l'appartement. L'agencement ouvert bien pensé crée une circulation fluide entre les espaces de vie, parfait pour la vie quotidienne et pour recevoir ses invités avec style.</p>
+                
+                <p>Situé dans un <span class="highlight">quartier de prestige de Bordeaux, Saint Genès</span>, vous profiterez d'un accès facile aux commodités locales, restaurants de renommée mondiale, boutiques de charme et d'excellents transports en commun. Le quartier équilibre parfaitement la commodité urbaine avec une atmosphère résidentielle paisible.</p>
+                
+                <p>Cette propriété représente une <span class="highlight">excellente opportunité d'investissement</span> dans l'une des villes les plus désirables de France, réputée pour sa riche culture, son patrimoine viticole mondialement célèbre, sa scène artistique dynamique et son économie en croissance continue.</p>
+                
+                <p>L'appartement est <span class="highlight">prêt à emménager</span> et a été méticuleusement entretenu par des propriétaires attentionnés, vous permettant de profiter immédiatement de votre nouveau foyer sans aucun souci ni frais supplémentaires.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="section location-section" id="location">
+        <div class="container">
+            <div class="location-content">
+                <h2 class="section-title" style="color: white;">Emplacement Parfait à Bordeaux, Saint Genès</h2>
+                <p>Situé dans un quartier dynamique avec excellente connectivité au centre-ville de Bordeaux, Saint Genès, réseaux de transport public, centres commerciaux, écoles prestigieuses et les magnifiques rives de la Garonne. Vivez le meilleur de la vie urbaine !</p>
+                
+                <!-- Google Maps Integration -->
+                <div class="map-container" style="margin-top: 3rem; text-align: center;">
+                    <div style="background: rgba(255,255,255,0.9); padding: 2rem; border-radius: 20px; backdrop-filter: blur(10px); display: inline-block; box-shadow: 0 15px 40px rgba(0,0,0,0.2);">
+                        <h3 style="color: #2c3e50; margin-bottom: 1.5rem; font-size: 1.5rem;">📍 Localisation de l'Appartement</h3>
+                        <!-- Placeholder for Google Maps - Add your iframe URL manually -->
+                        <iframe 
+                            src="https://www.google.com/maps/d/u/1/embed?mid=1Cqn5AnholnK1hpqkL9U5XZ_ojo8Kqoc&ehbc=2E312F" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0; border-radius: 15px; max-width: 800px; width: 100%;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <p style="color: #666; margin-top: 1rem; font-size: 0.9rem;">📌 Cliquez et explorez le quartier directement sur la carte</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Prêt à Faire de Cet Appartement le Vôtre ?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Contactez notre expert immobilier dès aujourd'hui pour planifier une visite privée et découvrir pourquoi cet appartement est parfait pour vous</p>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3 class="contact-title">🏆 Votre Expert Immobilier</h3>
+                    <p class="contact-detail">Lucie FERREIRA</p>
+                    <p class="contact-detail">06 00 00 00 00</p>
+                    <p class="contact-detail">Email: <a href="mailto:lucie@ferreira.com" style="color: #45b7d1;">lucie@ferreira.com</a></p>
+                    <p class="contact-detail">Professionnel Immobilier Agréé</p>
+                    <p class="contact-detail">Certifié VAD France</p>
+                </div>
+                <div class="contact-card">
+                    <h3 class="contact-title">📋 Détails de la Propriété</h3>
+                    <p class="contact-detail">5 Pièces • 102m²</p>
+                    <p class="contact-detail">Bordeaux, France (33000)</p>
+                    <p class="contact-detail"><strong>279 500€</strong></p>
+                </div>
+                <div class="contact-card">
+                    <h3 class="contact-title">📅 Planifier une Visite</h3>
+                    <p class="contact-detail">Disponible pour visite immédiate</p>
+                    <p class="contact-detail">Horaires flexibles disponibles</p>
+                    <a href="#" class="cta-button" style="margin-top: 1.5rem; font-size: 1.1rem;">Contactez Maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Copyright Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>🏠 Appartement Bordeaux - 102m² de Raffinement</strong></p>
+            <p>Votre nouvelle adresse vous attend dans le cœur vibrant de Bordeaux</p>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.nav-dot');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Show current slide
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Auto-advance carousel
+        setInterval(nextSlide, 5000);
+
+        // Arrow navigation
+        document.querySelector('.arrow-left').addEventListener('click', prevSlide);
+        document.querySelector('.arrow-right').addEventListener('click', nextSlide);
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Lightbox Gallery functionality
+        const photoItems = document.querySelectorAll('.photo-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+
+        const photos = [
+            'images/1.jpg',
+            'images/2.jpg',
+            'images/3.jpg',
+            'images/4.jpg',
+            'images/5.jpg',
+            'images/6.jpg',
+            'images/7.jpg',
+            'images/8.jpg',
+            'images/9.jpg',
+            'images/10.jpg',
+            'images/11.jpg'
+        ];
+
+        let currentPhotoIndex = 0;
+
+        function openLightbox(index) {
+            currentPhotoIndex = index;
+            lightboxImage.src = photos[index];
+            lightboxCounter.textContent = `${index + 1} / ${photos.length}`;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent body scroll
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore body scroll
+        }
+
+        function showNextPhoto() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            lightboxImage.src = photos[currentPhotoIndex];
+            lightboxCounter.textContent = `${currentPhotoIndex + 1} / ${photos.length}`;
+        }
+
+        function showPrevPhoto() {
+            currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+            lightboxImage.src = photos[currentPhotoIndex];
+            lightboxCounter.textContent = `${currentPhotoIndex + 1} / ${photos.length}`;
+        }
+
+        // Event listeners for lightbox
+        photoItems.forEach((item, index) => {
+            item.addEventListener('click', () => openLightbox(index));
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxNext.addEventListener('click', showNextPhoto);
+        lightboxPrev.addEventListener('click', showPrevPhoto);
+
+        // Close lightbox when clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) {
+                switch(e.key) {
+                    case 'Escape':
+                        closeLightbox();
+                        break;
+                    case 'ArrowRight':
+                        showNextPhoto();
+                        break;
+                    case 'ArrowLeft':
+                        showPrevPhoto();
+                        break;
+                }
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Enhanced scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to elements
+        document.querySelectorAll('.feature-card, .photo-item, .contact-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(40px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Navigation functionality
+        const navbar = document.getElementById('navbar');
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        // Mobile menu toggle
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Always keep navbar in 'scrolled' state
+        navbar.classList.add('scrolled');
+
+        // Statistics toggle functionality
+        function showStats(type) {
+            // Hide all stats content
+            document.querySelectorAll('.stats-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected stats and activate button
+            if (type === 'family') {
+                document.getElementById('family-stats').classList.add('active');
+                document.querySelector('[onclick="showStats(\'family\')"]').classList.add('active');
+            } else if (type === 'investment') {
+                document.getElementById('investment-stats').classList.add('active');
+                document.querySelector('[onclick="showStats(\'investment\')"]').classList.add('active');
+            }
+        }
+
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.floating-elements');
+            if (parallax) {
+                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
