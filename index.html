@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magnifique Appartement 5 Pièces à Bordeaux, Saint Genès | 102m² | 289 500€</title>
+    <title>Magnifique Appartement 5 Pièces à Bordeaux, Saint Genès | 102m² | 289 500€</title>
     <meta name="description" content="Appartement d'exception 102m² à Bordeaux. 5 pièces, cheminée, 4 balcons, cour privative, garage. Quartier recherché. Visite immédiate possible. Prix: 279,500€">
 <meta name="keywords" content="appartement Bordeaux, vente immobilier Bordeaux, 5 pièces Bordeaux, appartement 102m2, immobilier investissement Bordeaux">
 <script type="text/javascript">
@@ -61,6 +61,12 @@
             color: #2c3e50;
         }
 
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
         .nav-links {
             display: flex;
             list-style: none;
@@ -93,6 +99,56 @@
         .nav-menu.scrolled .nav-links li a:hover {
             background: rgba(102,126,234,0.1);
             color: #667eea;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-flag {
+            width: 32px;
+            height: 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .lang-flag:hover {
+            transform: scale(1.1);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .nav-menu.scrolled .lang-flag:hover {
+            border-color: rgba(102,126,234,0.3);
+        }
+
+        .lang-flag.active {
+            border-color: rgba(255,255,255,0.6);
+            transform: scale(1.05);
+        }
+
+        .nav-menu.scrolled .lang-flag.active {
+            border-color: #667eea;
+        }
+
+        .flag-fr::before {
+            content: "🇫🇷";
+            font-size: 1.5rem;
+        }
+
+        .flag-en::before {
+            content: "🇬🇧";
+            font-size: 1.5rem;
         }
 
         .nav-toggle {
@@ -128,7 +184,7 @@
 
         /* Mobile Navigation */
         @media (max-width: 768px) {
-            .nav-links {
+            .nav-content {
                 position: fixed;
                 top: 70px;
                 left: 0;
@@ -137,14 +193,20 @@
                 backdrop-filter: blur(20px);
                 flex-direction: column;
                 padding: 2rem;
-                gap: 1rem;
+                gap: 2rem;
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
                 box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             }
 
-            .nav-links.active {
+            .nav-content.active {
                 transform: translateX(0);
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
             }
 
             .nav-links li a {
@@ -154,6 +216,10 @@
                 display: block;
                 text-align: center;
                 font-size: 1.1rem;
+            }
+
+            .language-switcher {
+                justify-content: center;
             }
 
             .nav-toggle {
@@ -1293,6 +1359,14 @@
             0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
             50% { transform: translateY(-30px) rotate(10deg); opacity: 0.8; }
         }
+
+        /* Language hidden state */
+        [data-lang="fr"] { display: none; }
+        [data-lang="en"] { display: block; }
+        body[data-current-lang="fr"] [data-lang="fr"] { display: block; }
+        body[data-current-lang="fr"] [data-lang="en"] { display: none; }
+        body[data-current-lang="en"] [data-lang="fr"] { display: none; }
+        body[data-current-lang="en"] [data-lang="en"] { display: block; }
     </style>
     <script type="application/ld+json">
     {
@@ -1322,18 +1396,24 @@
       gtag('config', 'G-LLZZXDSMMQ');
     </script>
 </head>
-<body>
+<body data-current-lang="en">
     <!-- Navigation Bar -->
     <nav class="nav-menu scrolled" id="navbar">
       <div class="nav-container">
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#gallery">Galerie</a></li>
-          <li><a href="#description">Description</a></li>
-          <li><a href="#statistics">Statistiques</a></li>
-          <li><a href="#neighborhood">Quartier</a></li>
-          <li><a href="#location">Localisation</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-content" id="nav-content">
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#gallery" data-lang="fr">Galerie</a><a href="#gallery" data-lang="en">Gallery</a></li>
+            <li><a href="#description" data-lang="fr">Description</a><a href="#description" data-lang="en">Description</a></li>
+            <li><a href="#statistics" data-lang="fr">Statistiques</a><a href="#statistics" data-lang="en">Statistics</a></li>
+            <li><a href="#neighborhood" data-lang="fr">Quartier</a><a href="#neighborhood" data-lang="en">Neighborhood</a></li>
+            <li><a href="#location" data-lang="fr">Localisation</a><a href="#location" data-lang="en">Location</a></li>
+            <li><a href="#contact" data-lang="fr">Contact</a><a href="#contact" data-lang="en">Contact</a></li>
+          </ul>
+          <div class="language-switcher">
+            <div class="lang-flag flag-fr" onclick="switchLanguage('fr')" title="Français"></div>
+            <div class="lang-flag flag-en active" onclick="switchLanguage('en')" title="English"></div>
+          </div>
+        </div>
         <div class="nav-toggle" id="nav-toggle">
           <span></span>
           <span></span>
@@ -1370,11 +1450,14 @@
         <!-- Hero Content Overlay -->
         <div class="hero-overlay">
             <div class="hero-content">
-                <h1 class="hero-title">Appartement Exceptionnel 5 Pièces</h1>
+                <h1 class="hero-title" data-lang="fr">Appartement Exceptionnel 5 Pièces</h1>
+                <h1 class="hero-title" data-lang="en">Exceptional 5-Rooms Apartment</h1>
                 <div style="margin-top: 120px;">
-                    <a href="#contact" class="cta-button">Planifier une Visite</a>
+                    <a href="#contact" class="cta-button" data-lang="fr">Planifier une Visite</a>
+                    <a href="#contact" class="cta-button" data-lang="en">Schedule a Visit</a>
                 </div>
-                <p class="hero-subtitle">Emplacement de Prestige à Bordeaux, Saint Genès • 102m² de Vie Moderne</p>
+                <p class="hero-subtitle" data-lang="fr">Emplacement de Prestige à Bordeaux, Saint Genès • 102m² de Vie Moderne</p>
+                <p class="hero-subtitle" data-lang="en">Prestigious Location in Bordeaux, Saint Genès • 102m² of Modern Living</p>
             </div>
         </div>
 
@@ -1396,27 +1479,36 @@
     <!-- Features Section -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Pourquoi Vous Allez Adorer Cet Appartement</h2>
+            <h2 class="section-title" data-lang="fr">Pourquoi Vous Allez Adorer Cet Appartement</h2>
+            <h2 class="section-title" data-lang="en">Why You'll Love This Apartment</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🏠</div>
-                    <h3 class="feature-title">102m² d'Espace</h3>
-                    <p class="feature-description">Généreux espace de vie avec 5 pièces, parfait pour les familles ou les professionnels recherchant confort et style. Grand salon avec cheminée utilisable, 2 salles de bain, 1 grand balcon et 3 petits balcons. Agrémenté d'une cour privative, box garage, garage à vélos et grande cave privative pour un confort de vie exceptionnel.</p>
+                    <h3 class="feature-title" data-lang="fr">102m² d'Espace</h3>
+                    <h3 class="feature-title" data-lang="en">102m² of Space</h3>
+                    <p class="feature-description" data-lang="fr">Généreux espace de vie avec 5 pièces, parfait pour les familles ou les professionnels recherchant confort et style. Grand salon avec cheminée utilisable, 2 salles de bain, 1 grand balcon et 3 petits balcons. Agrémenté d'une cour privative, box garage, garage à vélos et grande cave privative pour un confort de vie exceptionnel.</p>
+                    <p class="feature-description" data-lang="en">Generous living space with 5 rooms, perfect for families or professionals seeking comfort and style. Large living room with functional fireplace, 2 bathrooms, 1 large balcony and 3 small balconies. Enhanced with a private courtyard, garage box, bicycle garage and large private cellar for exceptional living comfort.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📍</div>
-                    <h3 class="feature-title">Emplacement de Prestige</h3>
-                    <p class="feature-description">Situé dans un quartier recherché à Bordeaux, Saint Genès avec excellentes liaisons de transport (Tramway B Université/Centre ville, Bus, Boulevards), commodités locales (Pharmacies, Supermarchés, Boulangeries, Restaurants, Cafés, etc.)</p>
+                    <h3 class="feature-title" data-lang="fr">Emplacement de Prestige</h3>
+                    <h3 class="feature-title" data-lang="en">Prestigious Location</h3>
+                    <p class="feature-description" data-lang="fr">Situé dans un quartier recherché à Bordeaux, Saint Genès avec excellentes liaisons de transport (Tramway B Université/Centre ville, Bus, Boulevards), commodités locales (Pharmacies, Supermarchés, Boulangeries, Restaurants, Cafés, etc.)</p>
+                    <p class="feature-description" data-lang="en">Located in a sought-after neighborhood in Bordeaux, Saint Genès with excellent transport links (Tramway B University/City center, Bus, Boulevards), local amenities (Pharmacies, Supermarkets, Bakeries, Restaurants, Cafés, etc.)</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">✨</div>
-                    <h3 class="feature-title">Flexibilité & Modularité</h3>
-                    <p class="feature-description">Espace modulable offrant une flexibilité totale avec une cuisine à rafraîchir ou à déplacer selon vos goûts. Idéal pour investisseurs : possibilité de diviser en deux appartements distincts ou de conserver un seul logement spacieux pour maximiser vos options.</p>
+                    <h3 class="feature-title" data-lang="fr">Flexibilité & Modularité</h3>
+                    <h3 class="feature-title" data-lang="en">Flexibility & Modularity</h3>
+                    <p class="feature-description" data-lang="fr">Espace modulable offrant une flexibilité totale avec une cuisine à rafraîchir ou à déplacer selon vos goûts. Idéal pour investisseurs : possibilité de diviser en deux appartements distincts ou de conserver un seul logement spacieux pour maximiser vos options.</p>
+                    <p class="feature-description" data-lang="en">Modular space offering total flexibility with a kitchen to refresh or relocate according to your taste. Ideal for investors: possibility to divide into two separate apartments or keep one spacious dwelling to maximize your options.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
-                    <h3 class="feature-title">Valeur Exceptionnelle</h3>
-                    <p class="feature-description">Prix compétitif pour le marché bordelais avec fort potentiel d'investissement dans ce quartier en pleine croissance</p>
+                    <h3 class="feature-title" data-lang="fr">Valeur Exceptionnelle</h3>
+                    <h3 class="feature-title" data-lang="en">Exceptional Value</h3>
+                    <p class="feature-description" data-lang="fr">Prix compétitif pour le marché bordelais avec fort potentiel d'investissement dans ce quartier en pleine croissance</p>
+                    <p class="feature-description" data-lang="en">Competitive price for the Bordeaux market with strong investment potential in this growing neighborhood</p>
                 </div>
             </div>
         </div>
@@ -1425,8 +1517,10 @@
     <!-- Gallery Section -->
     <section class="section gallery-section" id="gallery">
         <div class="container">
-            <h2 class="section-title">Galerie Photos Complète</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: #666;">Cliquez sur une photo pour l'agrandir et naviguer dans la galerie</p>
+            <h2 class="section-title" data-lang="fr">Galerie Photos Complète</h2>
+            <h2 class="section-title" data-lang="en">Complete Photo Gallery</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: #666;" data-lang="fr">Cliquez sur une photo pour l'agrandir et naviguer dans la galerie</p>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: #666;" data-lang="en">Click on a photo to enlarge it and navigate through the gallery</p>
             
             <div class="photo-gallery">
                 <div class="photo-item photo-1" data-index="0"></div>
@@ -1458,17 +1552,31 @@
     <!-- Description Section -->
     <section class="section description-section" id="description">
         <div class="container">
-            <h2 class="section-title">Votre Appartement de Rêve Vous Attend</h2>
+            <h2 class="section-title" data-lang="fr">Votre Appartement de Rêve Vous Attend</h2>
+            <h2 class="section-title" data-lang="en">Your Dream Apartment Awaits</h2>
             <div class="description-content">
-                <p>Découvrez ce <span class="highlight">magnifique appartement 5 pièces</span> de 102m² au cœur de Bordeaux, Saint Genès. Cette propriété exceptionnelle offre le parfait équilibre entre confort moderne et charme français classique, conçue pour ceux qui apprécient un art de vivre de qualité.</p>
-                
-                <p>L'appartement dispose de <span class="highlight">pièces spacieuses et lumineuses</span> avec un magnifique parquet. L'agencement ouvert bien pensé crée une circulation fluide entre les espaces de vie, parfait pour la vie quotidienne et pour recevoir ses invités avec style.</p>
-                
-                <p>Situé dans un <span class="highlight">quartier de prestige de Bordeaux, Saint Genès</span>, vous profiterez d'un accès facile aux commodités locales, restaurants de renommée mondiale, boutiques de charme et d'excellents transports en commun. Le quartier équilibre parfaitement la commodité urbaine avec une atmosphère résidentielle paisible.</p>
-                
-                <p>Cette propriété représente une <span class="highlight">excellente opportunité d'investissement</span> dans l'une des villes les plus désirables de France, réputée pour sa riche culture, son patrimoine viticole mondialement célèbre, sa scène artistique dynamique et son économie en croissance continue.</p>
-                
-                <p>L'appartement est <span class="highlight">prêt à emménager</span> et a été méticuleusement entretenu par des propriétaires attentionnés (nouveau parquet et peinture fraîche), vous permettant de profiter immédiatement de votre nouveau foyer sans aucun souci ni frais supplémentaires.</p>
+                <div data-lang="fr">
+                    <p>Découvrez ce <span class="highlight">magnifique appartement 5 pièces</span> de 102m² au cœur de Bordeaux, Saint Genès. Cette propriété exceptionnelle offre le parfait équilibre entre confort moderne et charme français classique, conçue pour ceux qui apprécient un art de vivre de qualité.</p>
+                    
+                    <p>L'appartement dispose de <span class="highlight">pièces spacieuses et lumineuses</span> avec un magnifique parquet. L'agencement ouvert bien pensé crée une circulation fluide entre les espaces de vie, parfait pour la vie quotidienne et pour recevoir ses invités avec style.</p>
+                    
+                    <p>Situé dans un <span class="highlight">quartier de prestige de Bordeaux, Saint Genès</span>, vous profiterez d'un accès facile aux commodités locales, restaurants de renommée mondiale, boutiques de charme et d'excellents transports en commun. Le quartier équilibre parfaitement la commodité urbaine avec une atmosphère résidentielle paisible.</p>
+                    
+                    <p>Cette propriété représente une <span class="highlight">excellente opportunité d'investissement</span> dans l'une des villes les plus désirables de France, réputée pour sa riche culture, son patrimoine viticole mondialement célèbre, sa scène artistique dynamique et son économie en croissance continue.</p>
+                    
+                    <p>L'appartement est <span class="highlight">prêt à emménager</span> et a été méticuleusement entretenu par des propriétaires attentionnés (nouveau parquet et peinture fraîche), vous permettant de profiter immédiatement de votre nouveau foyer sans aucun souci ni frais supplémentaires.</p>
+                </div>
+                <div data-lang="en">
+                    <p>Discover this <span class="highlight">magnificent 5-rooms apartment</span> of 102m² in the heart of Bordeaux, Saint Genès. This exceptional property offers the perfect balance between modern comfort and classic French charm, designed for those who appreciate quality living.</p>
+                    
+                    <p>The apartment features <span class="highlight">spacious and bright rooms</span> with beautiful hardwood flooring. The thoughtfully designed open layout creates fluid circulation between living spaces, perfect for daily life and entertaining guests in style.</p>
+                    
+                    <p>Located in a <span class="highlight">prestigious neighborhood of Bordeaux, Saint Genès</span>, you'll enjoy easy access to local amenities, world-renowned restaurants, charming boutiques, and excellent public transportation. The neighborhood perfectly balances urban convenience with a peaceful residential atmosphere.</p>
+                    
+                    <p>This property represents an <span class="highlight">excellent investment opportunity</span> in one of France's most desirable cities, renowned for its rich culture, world-famous wine heritage, dynamic arts scene, and continuously growing economy.</p>
+                    
+                    <p>The apartment is <span class="highlight">move-in ready</span> and has been meticulously maintained by caring owners (new flooring and fresh paint), allowing you to immediately enjoy your new home without any worries or additional costs.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1477,14 +1585,22 @@
     <section class="section statistics-section" id="statistics">
         <div class="container">
             <div class="stats-intro">
-                <h2 class="section-title" style="color: white;">Pourquoi Choisir Cet Appartement ?</h2>
-                <p>Découvrez les chiffres qui font de cette propriété un choix intelligent pour votre projet</p>
+                <h2 class="section-title" style="color: white;" data-lang="fr">Pourquoi Choisir Cet Appartement ?</h2>
+                <h2 class="section-title" style="color: white;" data-lang="en">Why Choose This Apartment?</h2>
+                <p data-lang="fr">Découvrez les chiffres qui font de cette propriété un choix intelligent pour votre projet</p>
+                <p data-lang="en">Discover the numbers that make this property a smart choice for your project</p>
             </div>
 
             <!-- Toggle Buttons -->
             <div class="stats-toggle">
-                <button class="toggle-btn active" onclick="showStats('family')">👨‍👩‍👧‍👦 Vie de Famille</button>
-                <button class="toggle-btn" onclick="showStats('investment')">💰 Investissement</button>
+                <button class="toggle-btn active" onclick="showStats('family')">
+                    <span data-lang="fr">👨‍👩‍👧‍👦 Vie de Famille</span>
+                    <span data-lang="en">👨‍👩‍👧‍👦 Family Living</span>
+                </button>
+                <button class="toggle-btn" onclick="showStats('investment')">
+                    <span data-lang="fr">💰 Investissement</span>
+                    <span data-lang="en">💰 Investment</span>
+                </button>
             </div>
 
             <!-- Family Statistics -->
@@ -1492,38 +1608,52 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-number">15+</div>
-                        <div class="stat-label">Écoles & Crèches</div>
-                        <div class="stat-description">Dans un rayon de 2km, tous niveaux confondus</div>
+                        <div class="stat-label" data-lang="fr">Écoles & Crèches</div>
+                        <div class="stat-label" data-lang="en">Schools & Nurseries</div>
+                        <div class="stat-description" data-lang="fr">Dans un rayon de 2km, tous niveaux confondus</div>
+                        <div class="stat-description" data-lang="en">Within a 2km radius, all levels combined</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">8</div>
-                        <div class="stat-label">Espaces Verts</div>
-                        <div class="stat-description">Parcs, jardins et aires de jeux à proximité</div>
+                        <div class="stat-label" data-lang="fr">Espaces Verts</div>
+                        <div class="stat-label" data-lang="en">Green Spaces</div>
+                        <div class="stat-description" data-lang="fr">Parcs, jardins et aires de jeux à proximité</div>
+                        <div class="stat-description" data-lang="en">Parks, gardens and playgrounds nearby</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">9.2/10</div>
-                        <div class="stat-label">Indice Sécurité</div>
-                        <div class="stat-description">Quartier résidentiel très sécurisé</div>
+                        <div class="stat-label" data-lang="fr">Indice Sécurité</div>
+                        <div class="stat-label" data-lang="en">Safety Index</div>
+                        <div class="stat-description" data-lang="fr">Quartier résidentiel très sécurisé</div>
+                        <div class="stat-description" data-lang="en">Very secure residential neighborhood</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">4</div>
-                        <div class="stat-label">Lignes Transport</div>
-                        <div class="stat-description">Tramway B + lignes de bus régulières</div>
+                        <div class="stat-label" data-lang="fr">Lignes Transport</div>
+                        <div class="stat-label" data-lang="en">Transport Lines</div>
+                        <div class="stat-description" data-lang="fr">Tramway B + lignes de bus régulières</div>
+                        <div class="stat-description" data-lang="en">Tramway B + regular bus lines</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">25+</div>
-                        <div class="stat-label">Commerces</div>
-                        <div class="stat-description">Pharmacies, supermarchés, boulangeries</div>
+                        <div class="stat-label" data-lang="fr">Commerces</div>
+                        <div class="stat-label" data-lang="en">Shops</div>
+                        <div class="stat-description" data-lang="fr">Pharmacies, supermarchés, boulangeries</div>
+                        <div class="stat-description" data-lang="en">Pharmacies, supermarkets, bakeries</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">12 min</div>
-                        <div class="stat-label">Centre-Ville</div>
-                        <div class="stat-description">Accès rapide au cœur historique</div>
+                        <div class="stat-label" data-lang="fr">Centre-Ville</div>
+                        <div class="stat-label" data-lang="en">City Center</div>
+                        <div class="stat-description" data-lang="fr">Accès rapide au cœur historique</div>
+                        <div class="stat-description" data-lang="en">Quick access to historic heart</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">15 min</div>
-                        <div class="stat-label">Université Talence</div>
-                        <div class="stat-description">Accès rapide aux Universités bordelaises</div>
+                        <div class="stat-label" data-lang="fr">Université Talence</div>
+                        <div class="stat-label" data-lang="en">Talence University</div>
+                        <div class="stat-description" data-lang="fr">Accès rapide aux Universités bordelaises</div>
+                        <div class="stat-description" data-lang="en">Quick access to Bordeaux Universities</div>
                     </div>
                 </div>
             </div>
@@ -1533,33 +1663,45 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-number">4.2%</div>
-                        <div class="stat-label">Rendement Locatif</div>
-                        <div class="stat-description">Estimation annuelle brute moyenne</div>
+                        <div class="stat-label" data-lang="fr">Rendement Locatif</div>
+                        <div class="stat-label" data-lang="en">Rental Yield</div>
+                        <div class="stat-description" data-lang="fr">Estimation annuelle brute moyenne</div>
+                        <div class="stat-description" data-lang="en">Average annual gross estimate</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">+12%</div>
-                        <div class="stat-label">Évolution Prix</div>
-                        <div class="stat-description">Croissance sur 3 ans dans le secteur</div>
+                        <div class="stat-label" data-lang="fr">Évolution Prix</div>
+                        <div class="stat-label" data-lang="en">Price Evolution</div>
+                        <div class="stat-description" data-lang="fr">Croissance sur 3 ans dans le secteur</div>
+                        <div class="stat-description" data-lang="en">3-year growth in the sector</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">96%</div>
-                        <div class="stat-label">Taux Occupation</div>
-                        <div class="stat-description">Demande locative très forte</div>
+                        <div class="stat-label" data-lang="fr">Taux Occupation</div>
+                        <div class="stat-label" data-lang="en">Occupancy Rate</div>
+                        <div class="stat-description" data-lang="fr">Demande locative très forte</div>
+                        <div class="stat-description" data-lang="en">Very strong rental demand</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">15 jours</div>
-                        <div class="stat-label">Délai Location</div>
-                        <div class="stat-description">Temps moyen pour trouver locataire</div>
+                        <div class="stat-number">15 days</div>
+                        <div class="stat-label" data-lang="fr">Délai Location</div>
+                        <div class="stat-label" data-lang="en">Rental Timeline</div>
+                        <div class="stat-description" data-lang="fr">Temps moyen pour trouver locataire</div>
+                        <div class="stat-description" data-lang="en">Average time to find tenant</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">XXXX €</div>
-                        <div class="stat-label">Loyer Estimé</div>
-                        <div class="stat-description">Potentiel locatif mensuel</div>
+                        <div class="stat-number">1300 €</div>
+                        <div class="stat-label" data-lang="fr">Loyer Estimé</div>
+                        <div class="stat-label" data-lang="en">Estimated Rent</div>
+                        <div class="stat-description" data-lang="fr">Potentiel locatif mensuel</div>
+                        <div class="stat-description" data-lang="en">Monthly rental potential</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">A+</div>
-                        <div class="stat-label">Zone Prisée</div>
-                        <div class="stat-description">Secteur recherché par locataires</div>
+                        <div class="stat-label" data-lang="fr">Zone Prisée</div>
+                        <div class="stat-label" data-lang="en">Prime Area</div>
+                        <div class="stat-description" data-lang="fr">Secteur recherché par locataires</div>
+                        <div class="stat-description" data-lang="en">Area sought by tenants</div>
                     </div>
                 </div>
             </div>
@@ -1571,63 +1713,101 @@
         <div class="container">
             <div class="neighborhood-content">
                 <div class="neighborhood-intro">
-                    <h2 class="section-title" style="color: #2c3e50;">Histoire du Quartier</h2>
-                    <p>Découvrez le riche patrimoine et l'évolution fascinante de ce quartier emblématique de Bordeaux, Saint Genès</p>
+                    <h2 class="section-title" style="color: #2c3e50;" data-lang="fr">Histoire du Quartier</h2>
+                    <h2 class="section-title" style="color: #2c3e50;" data-lang="en">Neighborhood History</h2>
+                    <p data-lang="fr">Découvrez le riche patrimoine et l'évolution fascinante de ce quartier emblématique de Bordeaux, Saint Genès</p>
+                    <p data-lang="en">Discover the rich heritage and fascinating evolution of this emblematic neighborhood of Bordeaux, Saint Genès</p>
                 </div>
 
                 <div class="history-grid">
                     <div class="history-card">
-                        <h3>🏛️ Des Origines Médiévales à l'Époque Moderne</h3>
-                        <p>Au Moyen Âge, ce secteur de Bordeaux, Saint Genès n'était qu'une zone marécageuse située aux portes de la ville. Avec le développement urbain du 19ème siècle et la mise en place des grands boulevards, <span class="highlight-text">le quartier se transforme en banlieue résidentielle prisée</span> de la bourgeoisie bordelaise.</p>
-                        
-                        <p>L'architecture du quartier témoigne de cette évolution : les façades néoclassiques côtoient harmonieusement des créations Art déco et Art nouveau. Cette diversité architecturale reflète <span class="highlight-text">un engouement constant jusqu'au début du 20ème siècle</span>, faisant aujourd'hui la richesse patrimoniale du secteur.</p>
+                        <h3 data-lang="fr">🏛️ Des Origines Médiévales à l'Époque Moderne</h3>
+                        <h3 data-lang="en">🏛️ From Medieval Origins to Modern Times</h3>
+                        <div data-lang="fr">
+                            <p>Au Moyen Âge, ce secteur de Bordeaux, Saint Genès n'était qu'une zone marécageuse située aux portes de la ville. Avec le développement urbain du 19ème siècle et la mise en place des grands boulevards, <span class="highlight-text">le quartier se transforme en banlieue résidentielle prisée</span> de la bourgeoisie bordelaise.</p>
+                            
+                            <p>L'architecture du quartier témoigne de cette évolution : les façades néoclassiques côtoient harmonieusement des créations Art déco et Art nouveau. Cette diversité architecturale reflète <span class="highlight-text">un engouement constant jusqu'au début du 20ème siècle</span>, faisant aujourd'hui la richesse patrimoniale du secteur.</p>
+                        </div>
+                        <div data-lang="en">
+                            <p>In the Middle Ages, this sector of Bordeaux, Saint Genès was just a marshy area located at the gates of the city. With the urban development of the 19th century and the establishment of the great boulevards, <span class="highlight-text">the neighborhood transforms into a sought-after residential suburb</span> of the Bordeaux bourgeoisie.</p>
+                            
+                            <p>The neighborhood's architecture testifies to this evolution: neoclassical facades harmoniously coexist with Art Deco and Art Nouveau creations. This architectural diversity reflects <span class="highlight-text">a constant enthusiasm until the early 20th century</span>, making today the heritage wealth of the sector.</p>
+                        </div>
                     </div>
 
                     <div class="history-card">
-                        <h3>🏗️ Patrimoine Architectural Remarquable</h3>
-                        <p>Le quartier abrite de nombreux <span class="highlight-text">édifices historiques et architecturaux</span> qui racontent l'histoire de Bordeaux, Saint Genès. Des églises aux hôtels particuliers, en passant par les anciens bâtiments hospitaliers et les maisons bourgeoises, chaque rue dévoile un pan de l'histoire locale.</p>
-                        
-                        <p>Les espaces verts aménagés dans d'anciennes propriétés privées offrent aujourd'hui aux résidents des <span class="highlight-text">havres de paix paysagés à l'anglaise</span>, véritables poumons verts au cœur de l'urbain.</p>
+                        <h3 data-lang="fr">🏗️ Patrimoine Architectural Remarquable</h3>
+                        <h3 data-lang="en">🏗️ Remarkable Architectural Heritage</h3>
+                        <div data-lang="fr">
+                            <p>Le quartier abrite de nombreux <span class="highlight-text">édifices historiques et architecturaux</span> qui racontent l'histoire de Bordeaux, Saint Genès. Des églises aux hôtels particuliers, en passant par les anciens bâtiments hospitaliers et les maisons bourgeoises, chaque rue dévoile un pan de l'histoire locale.</p>
+                            
+                            <p>Les espaces verts aménagés dans d'anciennes propriétés privées offrent aujourd'hui aux résidents des <span class="highlight-text">havres de paix paysagés à l'anglaise</span>, véritables poumons verts au cœur de l'urbain.</p>
+                        </div>
+                        <div data-lang="en">
+                            <p>The neighborhood houses numerous <span class="highlight-text">historical and architectural buildings</span> that tell the story of Bordeaux, Saint Genès. From churches to private mansions, including old hospital buildings and bourgeois houses, each street reveals a piece of local history.</p>
+                            
+                            <p>Green spaces designed in former private properties now offer residents <span class="highlight-text">English-style landscaped havens of peace</span>, true green lungs in the heart of the urban area.</p>
+                        </div>
                     </div>
 
                     <div class="history-card">
-                        <h3>🌟 Vivre dans ce Quartier Aujourd'hui</h3>
-                        <p>Réputé <span class="highlight-text">tranquille et parfaitement desservi</span> par les transports en commun, le quartier séduit par la beauté et la diversité de ses architectures. Les familles apprécient la présence d'établissements scolaires de qualité et d'espaces verts équipés.</p>
-                        
-                        <p>Le tramway permet de rejoindre facilement le centre-ville historique ainsi que les campus universitaires.</span></p>
+                        <h3 data-lang="fr">🌟 Vivre dans ce Quartier Aujourd'hui</h3>
+                        <h3 data-lang="en">🌟 Living in this Neighborhood Today</h3>
+                        <div data-lang="fr">
+                            <p>Réputé <span class="highlight-text">tranquille et parfaitement desservi</span> par les transports en commun, le quartier séduit par la beauté et la diversité de ses architectures. Les familles apprécient la présence d'établissements scolaires de qualité et d'espaces verts équipés.</p>
+                            
+                            <p>Le tramway permet de rejoindre facilement le centre-ville historique ainsi que les campus universitaires.</p>
+                        </div>
+                        <div data-lang="en">
+                            <p>Renowned as <span class="highlight-text">quiet and perfectly served</span> by public transport, the neighborhood captivates with the beauty and diversity of its architecture. Families appreciate the presence of quality educational institutions and equipped green spaces.</p>
+                            
+                            <p>The tramway allows easy access to the historic city center as well as university campuses.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="neighborhood-features">
                     <div class="feature-point">
                         <div class="icon">🚊</div>
-                        <h4>Transport Optimal</h4>
-                        <p>Ligne de tramway B, bus, proximité rocade et autoroutes</p>
+                        <h4 data-lang="fr">Transport Optimal</h4>
+                        <h4 data-lang="en">Optimal Transport</h4>
+                        <p data-lang="fr">Ligne de tramway B, bus, proximité rocade et autoroutes</p>
+                        <p data-lang="en">Tramway B line, bus, proximity to ring road and highways</p>
                     </div>
                     <div class="feature-point">
                         <div class="icon">🏫</div>
-                        <h4>Écoles de Qualité</h4>
-                        <p>Maternelles, primaires, collèges et lycées réputés</p>
+                        <h4 data-lang="fr">Écoles de Qualité</h4>
+                        <h4 data-lang="en">Quality Schools</h4>
+                        <p data-lang="fr">Maternelles, primaires, collèges et lycées réputés</p>
+                        <p data-lang="en">Renowned nurseries, primary, middle and high schools</p>
                     </div>
                     <div class="feature-point">
                         <div class="icon">🌳</div>
-                        <h4>Espaces Verts</h4>
-                        <p>Jardins paysagers, squares et parcs de proximité</p>
+                        <h4 data-lang="fr">Espaces Verts</h4>
+                        <h4 data-lang="en">Green Spaces</h4>
+                        <p data-lang="fr">Jardins paysagers, squares et parcs de proximité</p>
+                        <p data-lang="en">Landscaped gardens, squares and nearby parks</p>
                     </div>
                     <div class="feature-point">
                         <div class="icon">🛍️</div>
-                        <h4>Commerce Local</h4>
-                        <p>Boutiques, restaurants et services de proximité</p>
+                        <h4 data-lang="fr">Commerce Local</h4>
+                        <h4 data-lang="en">Local Commerce</h4>
+                        <p data-lang="fr">Boutiques, restaurants et services de proximité</p>
+                        <p data-lang="en">Shops, restaurants and local services</p>
                     </div>
                     <div class="feature-point">
                         <div class="icon">🏛️</div>
-                        <h4>Patrimoine Riche</h4>
-                        <p>Architecture historique et monuments classés</p>
+                        <h4 data-lang="fr">Patrimoine Riche</h4>
+                        <h4 data-lang="en">Rich Heritage</h4>
+                        <p data-lang="fr">Architecture historique et monuments classés</p>
+                        <p data-lang="en">Historic architecture and listed monuments</p>
                     </div>
                     <div class="feature-point">
                         <div class="icon">👨‍👩‍👧‍👦</div>
-                        <h4>Vie de Quartier</h4>
-                        <p>Ambiance familiale et communauté dynamique</p>
+                        <h4 data-lang="fr">Vie de Quartier</h4>
+                        <h4 data-lang="en">Neighborhood Life</h4>
+                        <p data-lang="fr">Ambiance familiale et communauté dynamique</p>
+                        <p data-lang="en">Family atmosphere and dynamic community</p>
                     </div>
                 </div>
             </div>
@@ -1638,13 +1818,16 @@
     <section class="section location-section" id="location">
         <div class="container">
             <div class="location-content">
-                <h2 class="section-title" style="color: white;">Emplacement Parfait à Bordeaux, Saint Genès</h2>
-                <p>Situé dans un quartier dynamique avec excellente connectivité au centre-ville de Bordeaux, Saint Genès, réseaux de transport public, centres commerciaux, écoles prestigieuses et les magnifiques rives de la Garonne. Vivez le meilleur de la vie urbaine !</p>
+                <h2 class="section-title" style="color: white;" data-lang="fr">Emplacement Parfait à Bordeaux, Saint Genès</h2>
+                <h2 class="section-title" style="color: white;" data-lang="en">Perfect Location in Bordeaux, Saint Genès</h2>
+                <p data-lang="fr">Situé dans un quartier dynamique Saint Genès avec excellente connectivité au centre-ville de Bordeaux Victoire, Pey-Berland, réseaux de transport public, centres commerciaux, écoles prestigieuses et les magnifiques rives de la Garonne. Vivez le meilleur de la vie urbaine !</p>
+                <p data-lang="en">Located in a dynamic neighborhood Saint Genès with excellent connectivity to downtown Bordeaux Victoire, Pey-Berland, public transport networks, shopping centers, prestigious schools and the magnificent banks of the Garonne. Live the best of urban life!</p>
                 
                 <!-- Google Maps Integration -->
                 <div class="map-container" style="margin-top: 3rem; text-align: center;">
                     <div style="background: rgba(255,255,255,0.9); padding: 2rem; border-radius: 20px; backdrop-filter: blur(10px); display: inline-block; box-shadow: 0 15px 40px rgba(0,0,0,0.2);">
-                        <h3 style="color: #2c3e50; margin-bottom: 1.5rem; font-size: 1.5rem;">📍 Localisation de l'Appartement</h3>
+                        <h3 style="color: #2c3e50; margin-bottom: 1.5rem; font-size: 1.5rem;" data-lang="fr">📍 Localisation de l'Appartement</h3>
+                        <h3 style="color: #2c3e50; margin-bottom: 1.5rem; font-size: 1.5rem;" data-lang="en">📍 Apartment Location</h3>
                         <!-- Placeholder for Google Maps - Add your iframe URL manually -->
                         <iframe 
                             src="https://www.google.com/maps/d/u/1/embed?mid=1Cqn5AnholnK1hpqkL9U5XZ_ojo8Kqoc&ehbc=2E312F" 
@@ -1655,7 +1838,8 @@
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
-                        <p style="color: #666; margin-top: 1rem; font-size: 0.9rem;">📌 Cliquez et explorez le quartier directement sur la carte</p>
+                        <p style="color: #666; margin-top: 1rem; font-size: 0.9rem;" data-lang="fr">📌 Cliquez et explorez le quartier directement sur la carte</p>
+                        <p style="color: #666; margin-top: 1rem; font-size: 0.9rem;" data-lang="en">📌 Click and explore the neighborhood directly on the map</p>
                     </div>
                 </div>
             </div>
@@ -1665,28 +1849,38 @@
     <!-- Contact Section -->
     <section class="section contact-section" id="contact">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Prêt à Faire de Cet Appartement le Vôtre ?</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Contactez notre expert immobilier dès aujourd'hui pour planifier une visite privée et découvrir pourquoi cet appartement est parfait pour vous</p>
+            <h2 class="section-title" style="color: white;" data-lang="fr">Prêt à Faire de Cet Appartement le Vôtre ?</h2>
+            <h2 class="section-title" style="color: white;" data-lang="en">Ready to Make This Apartment Yours?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;" data-lang="fr">Contactez notre expert immobilier dès aujourd'hui pour planifier une visite privée et découvrir pourquoi cet appartement est parfait pour vous</p>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;" data-lang="en">Contact our real estate expert today to schedule a private visit and discover why this apartment is perfect for you</p>
             
             <div class="contact-info">
                 <div class="contact-card">
-                    <h3 class="contact-title">🏆 Votre Expert Immobilier</h3>
+                    <h3 class="contact-title" data-lang="fr">🏆 Votre Expert Immobilier</h3>
+                    <h3 class="contact-title" data-lang="en">🏆 Your Real Estate Expert</h3>
                     <p class="contact-detail">Lucie FERREIRA</p>
                     <p class="contact-detail">06 74 91 43 15</p>
-                    <p class="contact-detail">Email: <a href="mailto:lucie.ferreira@iadfrance.fr" style="color: #45b7d1;">lucie.ferreira@iadfrance.fr</a></p>
-                    <p class="contact-detail">Professionnel Immobilier Agréé</p>
+                    <p class="contact-detail">Email: <a href="mailto:hello@saintgenes-bordeaux.fr" style="color: #45b7d1;">hello@saintgenes-bordeaux.fr</a></p>
+                    <p class="contact-detail" data-lang="fr">Professionnel Immobilier Agréé</p>
+                    <p class="contact-detail" data-lang="en">Licensed Real Estate Professional</p>
                 </div>
                 <div class="contact-card">
-                    <h3 class="contact-title">📋 Détails de la Propriété</h3>
-                    <p class="contact-detail">5 Pièces • 102m²</p>
+                    <h3 class="contact-title" data-lang="fr">📋 Détails de la Propriété</h3>
+                    <h3 class="contact-title" data-lang="en">📋 Property Details</h3>
+                    <p class="contact-detail" data-lang="fr">5 Pièces • 102m²</p>
+                    <p class="contact-detail" data-lang="en">5 Rooms • 102m²</p>
                     <p class="contact-detail">Bordeaux, France (33000)</p>
-                    <p class="contact-detail"><strong>289 500€</strong></p>
+                    <p class="contact-detail"><strong>289 500€</strong></p>
                 </div>
                 <div class="contact-card">
-                    <h3 class="contact-title">📅 Planifier une Visite</h3>
-                    <p class="contact-detail">Disponible pour visite immédiate</p>
-                    <p class="contact-detail">Horaires flexibles disponibles</p>
-                    <a href="#" class="cta-button" style="margin-top: 1.5rem; font-size: 1.1rem;">Contactez Maintenant</a>
+                    <h3 class="contact-title" data-lang="fr">📅 Planifier une Visite</h3>
+                    <h3 class="contact-title" data-lang="en">📅 Schedule a Visit</h3>
+                    <p class="contact-detail" data-lang="fr">Disponible pour visite immédiate</p>
+                    <p class="contact-detail" data-lang="en">Available for immediate viewing</p>
+                    <p class="contact-detail" data-lang="fr">Horaires flexibles disponibles</p>
+                    <p class="contact-detail" data-lang="en">Flexible schedules available</p>
+                    <a href="mailto:hello@saintgenes-bordeaux.fr" class="cta-button" style="margin-top: 1.5rem; font-size: 1.1rem;" data-lang="fr">Contactez Maintenant</a>
+                    <a href="mailto:hello@saintgenes-bordeaux.fr" class="cta-button" style="margin-top: 1.5rem; font-size: 1.1rem;" data-lang="en">Contact Now</a>
                 </div>
             </div>
         </div>
@@ -1695,12 +1889,51 @@
     <!-- Footer / Copyright Section -->
     <footer class="footer">
         <div class="footer-content">
-            <p><strong>🏠 Appartement Bordeaux - 102m² de Raffinement</strong></p>
-            <p>Votre nouvelle adresse vous attend dans le cœur vibrant de Bordeaux</p>
+            <p data-lang="fr"><strong>🏠 Appartement Bordeaux - 102m² de Raffinement</strong></p>
+            <p data-lang="en"><strong>🏠 Bordeaux Apartment - 102m² of Refinement</strong></p>
+            <p data-lang="fr">Votre nouvelle adresse vous attend dans le cœur vibrant de Bordeaux</p>
+            <p data-lang="en">Your new address awaits you in the vibrant heart of Bordeaux</p>
         </div>
     </footer>
 
     <script>
+        // Language switching functionality
+        let currentLanguage = 'en'; // Default to English
+
+        function detectBrowserLanguage() {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.toLowerCase().startsWith('fr')) {
+                return 'fr';
+            }
+            return 'en';
+        }
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            document.body.setAttribute('data-current-lang', lang);
+            
+            // Update flag states
+            document.querySelectorAll('.lang-flag').forEach(flag => {
+                flag.classList.remove('active');
+            });
+            document.querySelector(`.flag-${lang}`).classList.add('active');
+            
+            // Store preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        function initializeLanguage() {
+            // Check for stored preference first, then browser language
+            const storedLang = localStorage.getItem('preferredLanguage');
+            const detectedLang = detectBrowserLanguage();
+            const initialLang = storedLang || detectedLang;
+            
+            switchLanguage(initialLang);
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', initializeLanguage);
+
         // Carousel functionality
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-slide');
@@ -1860,19 +2093,19 @@
         // Navigation functionality
         const navbar = document.getElementById('navbar');
         const navToggle = document.getElementById('nav-toggle');
-        const navLinks = document.getElementById('nav-links');
+        const navContent = document.getElementById('nav-content');
 
         // Mobile menu toggle
         navToggle.addEventListener('click', () => {
             navToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
+            navContent.classList.toggle('active');
         });
 
         // Close mobile menu when clicking on a link
-        navLinks.addEventListener('click', (e) => {
+        navContent.addEventListener('click', (e) => {
             if (e.target.tagName === 'A') {
                 navToggle.classList.remove('active');
-                navLinks.classList.remove('active');
+                navContent.classList.remove('active');
             }
         });
 
